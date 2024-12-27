@@ -1,0 +1,22 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  #root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  header {
+    flex: 0 0 auto;
+  }
+  
+  .map-container {
+    flex: 1 1 auto;
+  }
+  .blurred-tile-layer {
+    filter: grayscale(100%) blur(4px);
+  }

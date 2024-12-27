@@ -1,0 +1,113 @@
+/* Основен контейнер за приложението */
+.app-container {
+  height: 100vh; /* Уверява се, че приложението заема цялата височина на прозореца */
+  display: flex;
+  flex-direction: column;
+  overflow: hidden; /* Предотвратява скролиране извън контейнера */
+}
+
+/* Карта */
+.map-container {
+  flex: 1;
+  position: relative;
+}
+
+/* Бутон за отваряне/затваряне на формата */
+.toggle-form-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background: #007bff;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+  z-index: 1000;
+}
+
+.toggle-form-btn:hover {
+  background: #0056b3;
+}
+
+/* Странична форма */
+.form-drawer {
+  position: fixed;
+  top: 0;
+  right: -400px;
+  height: 100%;
+  width: 400px;
+  background: #f9f9f9; /* Светъл фон за по-добра четимост */
+  box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2);
+  transition: right 0.3s ease;
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 20px;
+}
+
+.form-drawer.open {
+  right: 0;
+}
+
+/* Спинър за зареждане */
+.loading-spinner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+/* Съобщение за грешка */
+.error-message {
+  text-align: center;
+  color: red;
+  font-size: 1.2em;
+  margin: 20px;
+}
+
+/* Админ панел */
+.admin-panel {
+  padding: 20px;
+  overflow-x: auto;
+}
+
+.admin-panel table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+.admin-panel th,
+.admin-panel td {
+  border: 1px solid #ddd;
+  padding: 8px;
+  text-align: center;
+}
+
+.admin-panel th {
+  background-color: #007bff;
+  color: white;
+}
+
+/* Responsive таблица */
+@media (max-width: 768px) {
+  .form-drawer {
+    width: 100%;
+    right: -100%;
+  }
+
+  .form-drawer.open {
+    right: 0;
+  }
+
+  .toggle-form-btn {
+    top: 10px;
+    right: 10px;
+    padding: 5px 10px;
+  }
+
+  .admin-panel table {
+    font-size: 0.9em;
+  }
+}
