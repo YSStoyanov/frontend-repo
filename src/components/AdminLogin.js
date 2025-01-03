@@ -6,7 +6,8 @@ const AdminLogin = ({ onLoginSuccess }) => {
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
 
-  const handleLogin = () => {
+  const handleLogin = (e) => {
+    e.preventDefault();
     // Проверка за валидни потребителско име и парола
     if (username === 'admin' && password === 'admin123') {
       onLoginSuccess();
@@ -18,20 +19,22 @@ const AdminLogin = ({ onLoginSuccess }) => {
   return (
     <div className="admin-login">
       <h2>Вход за администратор</h2>
-      <input
-        type="text"
-        placeholder="Потребителско име"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Парола"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-      />
-      {error && <p style={{ color: 'red' }}>{error}</p>}
-      <button onClick={handleLogin}>Вход</button>
+      <form onSubmit={handleLogin}>
+        <input
+          type="text"
+          placeholder="Потребителско име"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
+        <input
+          type="password"
+          placeholder="Парола"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+        />
+        {error && <p style={{ color: 'red' }}>{error}</p>}
+        <button type="submit">Вход</button>
+      </form>
     </div>
   );
 };

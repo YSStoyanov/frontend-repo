@@ -2,21 +2,30 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-  }
-  
-  #root {
+    background-color: #f0f0f0;
+    color: #333;
+}
+
+#root {
     height: 100vh;
     display: flex;
     flex-direction: column;
-  }
-  
-  header {
+}
+
+header {
     flex: 0 0 auto;
-  }
-  
-  .map-container {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+}
+
+.map-container {
     flex: 1 1 auto;
-  }
-  .blurred-tile-layer {
-    filter: grayscale(100%) blur(4px);
-  }
+    filter: none;
+    background-color: none;
+}
+
+.marker {
+    color: inherit;
+    background-color:none
+}

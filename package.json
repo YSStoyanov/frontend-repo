@@ -1,14 +1,17 @@
 {
   "name": "frontend",
   "version": "1.0.0",
-  "description": "This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).",
+  "description": "This project was bootstrapped with Create React App.",
   "main": "index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
+  "homepage": "https://YSStoyanov.github.io/Kavarna_signal-management-system",
   "keywords": [],
   "author": "",
   "license": "ISC",
@@ -18,20 +21,28 @@
     "@turf/turf": "^7.1.0",
     "ajv": "^8.17.1",
     "ajv-keywords": "^5.1.0",
+    "axios": "^1.7.9",
     "browserify-zlib": "^0.2.0",
     "buffer": "^6.0.3",
     "crypto-browserify": "^3.12.1",
     "leaflet": "^1.9.4",
+    "mapbox-gl": "^3.9.1",
     "path-browserify": "^1.0.1",
     "postcss": "^8.4.21",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-leaflet": "^4.2.1",
+    "react-leaflet-markercluster": "^4.2.1",
     "react-loader-spinner": "^6.1.6",
     "react-scripts": "^5.0.1",
     "stream-browserify": "^3.0.0",
     "url": "^0.11.4",
     "util": "^0.12.5"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
+    "@babel/preset-react": "^7.26.3",
+    "gh-pages": "^5.0.0"
   },
   "browserslist": {
     "production": [
@@ -44,8 +55,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
   }
 }

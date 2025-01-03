@@ -1,0 +1,58 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 50px; /* Fixed margin value */
+  padding: 50px; /* Fixed padding value */
+  background-color: #180303;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 150px auto; /* Adjusted margin to avoid overlapping with the header */
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 5);
+}
+
+h2 {
+  text-align: center;
+  color: #004aad;
+}
+
+form label {
+  font-weight: bold;
+}
+
+form input,
+form select,
+form textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 5px;
+  margin-bottom: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+form button {
+  background-color: #004aad;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+form button:hover {
+  background-color: #003680;
+}
+
+.map-container {
+  height: 400px;
+  margin-top: 20px;
+  border: 2px solid #004aad;
+  border-radius: 5px;
+  overflow: hidden;
+  filter: none
+}

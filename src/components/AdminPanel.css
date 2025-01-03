@@ -1,36 +1,38 @@
-.admin-panel {
+.admin-login {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f9f9f9;
   padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  margin: auto;
+  max-width: 400px;
 }
 
-table {
+.admin-login input {
   width: 100%;
-  border-collapse: collapse;
-  margin-bottom: 20px;
-}
-
-table th, table td {
-  border: 1px solid #ddd;
   padding: 10px;
-  text-align: left;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
 
-table th {
-  background-color: #007bff;
+.admin-login button {
+  width: 100%;
+  background-color: #0073e6;
   color: white;
-}
-
-button {
-  padding: 5px 10px;
+  padding: 10px;
   border: none;
   cursor: pointer;
+  border-radius: 5px;
 }
 
-button.delete {
-  background-color: red;
-  color: white;
+.admin-login button:hover {
+  background-color: #005bb5;
 }
 
-.error-message {
-  color: red;
-  font-weight: bold;
+.admin-login h2 {
+  color: #333;
 }

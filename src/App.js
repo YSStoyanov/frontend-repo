@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import MapView from './components/MapView';
 import SignalForm from './components/SignalForm';
 import AdminPanel from './components/AdminPanel';
@@ -34,11 +34,18 @@ const App = () => {
     }
   };
 
+  async function loadGeoJson() {
+    try {
+      const response = await fetch('/public/data/Kavarna_boundary_corrected.geojson');
+      const data = await response.json();
+      setGeoJsonData(data);
+    } catch (error) {
+      console.error('Error loading GeoJSON:', error);
+    }
+  }
+
   useEffect(() => {
-    fetch('/data/Kavarna_boundary_corrected.geojson')
-      .then((response) => response.json())
-      .then((data) => setGeoJsonData(data))
-      .catch((error) => console.error('Error loading GeoJSON:', error));
+    loadGeoJson();
 
     navigator.geolocation.getCurrentPosition(
       (position) => {
@@ -49,6 +56,7 @@ const App = () => {
       },
       (error) => {
         console.error('Грешка при получаване на локация:', error);
+        setUserLocation({ lat: 0, lng: 0 });
       }
     );
 
@@ -76,23 +84,26 @@ const App = () => {
 
   return (
     <div className="app-container">
-      <Header onAdminAccess={() => setIsAdminPanelVisible(!isAdminPanelVisible)} />
-      {!isAdminPanelVisible && (
+      <Header
+        onAdminAccess={() => setIsAdminPanelVisible(!isAdminPanelVisible)}
+      />
+      <div className="button-container">
+        <button
+          className="new-signal-button"
+          onClick={() => setIsFormVisible(!isFormVisible)}
+        >
+          ➕ Подай сигнал
+        </button>
+      </div>
+      <div className={`form-container ${isFormVisible ? 'open' : ''}`}>
+        <SignalForm
+          onAddMarker={handleAddMarker}
+          selectedLocation={selectedLocation}
+          setSelectedLocation={setSelectedLocation}
+        />
+      </div>
+      {!isAdminPanelVisible && !isFormVisible && (
         <>
-          <div className={`form-drawer ${isFormVisible ? 'open' : ''}`}>
-            <SignalForm
-              onAddMarker={handleAddMarker}
-              selectedLocation={selectedLocation}
-              setSelectedLocation={setSelectedLocation}
-              onClose={() => setIsFormVisible(false)}
-            />
-          </div>
-          <button
-            className="toggle-form-btn"
-            onClick={() => setIsFormVisible(!isFormVisible)}
-          >
-            {isFormVisible ? '✖ Затвори формата' : '➕ Добави сигнал'}
-          </button>
           {isLoading ? (
             <div className="loading-spinner">
               <Oval
@@ -106,12 +117,15 @@ const App = () => {
           ) : error ? (
             <p className="error-message">{error}</p>
           ) : (
-            <MapView
-              geoJsonData={geoJsonData}
-              markers={markers}
-              onLocationSelect={(location) => setSelectedLocation(location)}
-              initialPosition={userLocation}
-            />
+            <div className="map-container">
+              <MapView
+                geoJsonData={geoJsonData}
+                markers={markers}
+                userLocation={userLocation}
+                onLocationSelect={(location) => setSelectedLocation(location)}
+                initialPosition={userLocation}
+              />
+            </div>
           )}
         </>
       )}

@@ -1,6 +1,6 @@
 import React from 'react';
 import './Header.css';
-import logo from '../assets/kavarna-logo.png';
+import logo from '../assets/kavarna-logo.png'; // Ensure this path is correct
 
 const Header = ({ onAdminAccess }) => {
   return (
