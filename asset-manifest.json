@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/Kavarna_signal-management-system/static/css/main.26af633b.css",
+    "main.js": "/Kavarna_signal-management-system/static/js/main.058505c7.js",
+    "static/media/here.png": "/Kavarna_signal-management-system/static/media/here.dab616af187c6c06bbea.png",
+    "static/media/waste-management.png": "/Kavarna_signal-management-system/static/media/waste-management.7799a149842a8d4944f5.png",
+    "static/media/ecology.png": "/Kavarna_signal-management-system/static/media/ecology.2bee85e0a69d8d20ce1a.png",
+    "static/media/urban-environment.png": "/Kavarna_signal-management-system/static/media/urban-environment.2b3cd4b12c00ef431c4a.png",
+    "static/media/incidents.png": "/Kavarna_signal-management-system/static/media/incidents.285dace21111d0ae637a.png",
+    "static/media/other.png": "/Kavarna_signal-management-system/static/media/other.d21da36bb0a3d4bed233.png",
+    "static/media/kavarna-logo.png": "/Kavarna_signal-management-system/static/media/kavarna-logo.3c80585e2dec15028b9c.png",
+    "static/media/Kavarna_boundary_corrected.geojson": "/Kavarna_signal-management-system/static/media/Kavarna_boundary_corrected.3c805eabdb5a9be93433.geojson",
+    "index.html": "/Kavarna_signal-management-system/index.html",
+    "main.26af633b.css.map": "/Kavarna_signal-management-system/static/css/main.26af633b.css.map",
+    "main.058505c7.js.map": "/Kavarna_signal-management-system/static/js/main.058505c7.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.26af633b.css",
+    "static/js/main.058505c7.js"
+  ]
+}
